@@ -17,32 +17,32 @@ public class MallaCurricularServiceImpl implements MallaCurricularService {
 	
 	@Override
 	public void guardarMallaCurricular(MallaCurricular mallacurricular) {
-		repository.guardarMallaCurricular(mallacurricular);
+		repository.save(mallacurricular);
 
 	}
 
 	@Override
 	public void actualizarMallaCurricular(MallaCurricular mallacurricular) {
-		repository.actualizarMallaCurricular(mallacurricular);
+		repository.saveAndFlush(mallacurricular);
 
 	}
 
 	@Override
 	public void eliminarMallaCurricular(Integer id) {
-		repository.eliminarMallaCurricular(id);
+		repository.deleteById(id);
 
 	}
 
 	@Override
 	public List<MallaCurricular> listarMallas() {
 		
-		return repository.listarMallas();
+		return repository.findAll();
 	}
 
 	@Override
 	public MallaCurricular obtenerMallaCurricularId(Integer id) {
 		
-		return repository.obtenerMallaCurricularId(id);
+		return repository.getById(id);
 	}
 
 }

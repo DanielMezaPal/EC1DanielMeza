@@ -2,15 +2,15 @@ package com.idat.ecdanielmeza.repository;
 
 import java.util.List;
 
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+
 import com.idat.ecdanielmeza.model.Curso;
 
-public interface CursoRepository {
+@Repository
+public interface CursoRepository extends JpaRepository<Curso, Integer> {
 	
-	void guardarCurso(Curso curso);
-	void actualizarCurso(Curso curso);
-	void eliminarCurso(Integer id);
-	List<Curso> listarCursos();
-	Curso obtenerCursoId(Integer id);
+
 	
 
 }

@@ -1,7 +1,17 @@
 package com.idat.ecdanielmeza.model;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Table(name = "Profesor")
+@Entity
 public class Profesor {
 	
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer idProfesor;
 	private String profesor;
 	

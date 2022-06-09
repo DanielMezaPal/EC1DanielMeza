@@ -2,14 +2,14 @@ package com.idat.ecdanielmeza.repository;
 
 import java.util.List;
 
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+
 import com.idat.ecdanielmeza.model.Universidad;
 
-public interface UniversidadRepository {
+@Repository
+public interface UniversidadRepository extends JpaRepository<Universidad, Integer>{
 	
-	void guardarUniversidad(Universidad universidad);
-	void actualizarUniversidad(Universidad universidad);
-	void eliminarUniversidad(Integer id);
-	List<Universidad> listarUniversidades();
-	Universidad obtenerUniversidadId(Integer id);
+
 
 }

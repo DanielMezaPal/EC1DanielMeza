@@ -2,14 +2,15 @@ package com.idat.ecdanielmeza.repository;
 
 import java.util.List;
 
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+
 import com.idat.ecdanielmeza.model.Profesor;
 
-public interface ProfesorRepository {
+@Repository
+public interface ProfesorRepository extends JpaRepository<Profesor, Integer> {
 	
-	void guardarProfesor(Profesor profesor);
-	void actualizarProfesor(Profesor profesor);
-	void eliminarProfesor(Integer id);
-	List<Profesor> listarProfesores();
-	Profesor obtenerProfesorId(Integer id);
+
+
 
 }

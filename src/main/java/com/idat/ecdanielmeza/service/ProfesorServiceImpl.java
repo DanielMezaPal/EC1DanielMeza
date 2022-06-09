@@ -16,32 +16,32 @@ public class ProfesorServiceImpl implements ProfesorService {
 	
 	@Override
 	public void guardarProfesor(Profesor profesor) {
-		repository.guardarProfesor(profesor);
+		repository.save(profesor);
 
 	}
 
 	@Override
 	public void actualizarProfesor(Profesor profesor) {
-		repository.actualizarProfesor(profesor);
+		repository.saveAndFlush(profesor);
 
 	}
 
 	@Override
 	public void eliminarProfesor(Integer id) {
-		repository.eliminarProfesor(id);
+		repository.deleteById(id);
 
 	}
 
 	@Override
 	public List<Profesor> listarProfesores() {
 		
-		return repository.listarProfesores();
+		return repository.findAll();
 	}
 
 	@Override
 	public Profesor obtenerProfesorId(Integer id) {
 		
-		return repository.obtenerProfesorId(id);
+		return repository.getById(id);
 	}
 
 }

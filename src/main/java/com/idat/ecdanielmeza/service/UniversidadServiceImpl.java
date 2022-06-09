@@ -16,32 +16,32 @@ public class UniversidadServiceImpl implements UniversidadService {
 	
 	@Override
 	public void guardarUniversidad(Universidad universidad) {
-		repository.guardarUniversidad(universidad);
+		repository.save(universidad);
 
 	}
 
 	@Override
 	public void actualizarUniversidad(Universidad universidad) {
-		repository.actualizarUniversidad(universidad);
+		repository.saveAndFlush(universidad);
 
 	}
 
 	@Override
 	public void eliminarUniversidad(Integer id) {
-		repository.eliminarUniversidad(id);
+		repository.deleteById(id);
 
 	}
 
 	@Override
 	public List<Universidad> listarUniversidades() {
 		
-		return repository.listarUniversidades();
+		return repository.findAll();
 	}
 
 	@Override
 	public Universidad obtenerUniversidadId(Integer id) {
 		
-		return repository.obtenerUniversidadId(id);
+		return repository.getById(id);
 	}
 
 }

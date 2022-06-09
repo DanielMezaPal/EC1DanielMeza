@@ -2,14 +2,14 @@ package com.idat.ecdanielmeza.repository;
 
 import java.util.List;
 
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+
 import com.idat.ecdanielmeza.model.MallaCurricular;
 
-public interface MallaCurricularRepository {
+@Repository
+public interface MallaCurricularRepository extends JpaRepository<MallaCurricular, Integer>{
 	
-	void guardarMallaCurricular(MallaCurricular mallacurricular);
-	void actualizarMallaCurricular(MallaCurricular mallacurricular);
-	void eliminarMallaCurricular(Integer id);
-	List<MallaCurricular> listarMallas();
-	MallaCurricular obtenerMallaCurricularId(Integer id);
+
 
 }

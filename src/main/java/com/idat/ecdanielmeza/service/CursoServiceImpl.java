@@ -10,40 +10,38 @@ import com.idat.ecdanielmeza.repository.CursoRepository;
 
 @Service
 public class CursoServiceImpl implements CursoService {
-
 	
 	@Autowired
-	private CursoRepository repository;
-	
+	private CursoRepository repository;	
 	
 	@Override
 	public void guardarCurso(Curso curso) {
-		repository.guardarCurso(curso);
+		repository.save(curso);
 
 	}
 
 	@Override
 	public void actualizarCurso(Curso curso) {
-		repository.actualizarCurso(curso);
+		repository.saveAndFlush(curso);
 
 	}
 
 	@Override
 	public void eliminarCurso(Integer id) {
-		repository.eliminarCurso(id);
+		repository.deleteById(id);
 
 	}
 
 	@Override
 	public List<Curso> listarCursos() {
 		
-		return repository.listarCursos();
+		return repository.findAll();
 	}
 
 	@Override
 	public Curso obtenerCursoId(Integer id) {
 		
-		return repository.obtenerCursoId(id);
+		return repository.getById(id);
 	}
 
 }
