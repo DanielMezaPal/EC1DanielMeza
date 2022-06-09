@@ -4,6 +4,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Table(name = "Malla")
@@ -14,6 +15,9 @@ public class MallaCurricular {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer idMalla;
 	private Integer anio;
+	
+	@OneToOne(mappedBy = "malla")
+	private Universidad universidad; 
 	
 	
 	public Integer getIdMalla() {
