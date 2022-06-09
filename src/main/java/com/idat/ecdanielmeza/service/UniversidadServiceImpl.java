@@ -41,7 +41,7 @@ public class UniversidadServiceImpl implements UniversidadService {
 	@Override
 	public Universidad obtenerUniversidadId(Integer id) {
 		
-		return repository.getById(id);
+		return repository.findById(id).orElse(null);
 	}
 
 }

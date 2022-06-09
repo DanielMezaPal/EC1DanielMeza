@@ -41,7 +41,7 @@ public class ProfesorServiceImpl implements ProfesorService {
 	@Override
 	public Profesor obtenerProfesorId(Integer id) {
 		
-		return repository.getById(id);
+		return repository.findById(id).orElse(null);
 	}
 
 }

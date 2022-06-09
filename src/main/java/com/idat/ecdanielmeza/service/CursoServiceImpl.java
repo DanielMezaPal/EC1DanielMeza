@@ -41,7 +41,7 @@ public class CursoServiceImpl implements CursoService {
 	@Override
 	public Curso obtenerCursoId(Integer id) {
 		
-		return repository.getById(id);
+		return repository.findById(id).orElse(null);
 	}
 
 }

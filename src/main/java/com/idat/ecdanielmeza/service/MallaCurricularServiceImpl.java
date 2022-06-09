@@ -42,7 +42,7 @@ public class MallaCurricularServiceImpl implements MallaCurricularService {
 	@Override
 	public MallaCurricular obtenerMallaCurricularId(Integer id) {
 		
-		return repository.getById(id);
+		return repository.findById(id).orElse(null);
 	}
 
 }
